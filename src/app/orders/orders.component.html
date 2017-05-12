@@ -1,0 +1,36 @@
+<h2 class="page-heading">
+  Order items
+</h2>
+
+<div class="pagination-header">
+  {{total}} found | View
+
+  <select [(ngModel)]="page.pageSize" (change)="load(page)">
+    <option *ngFor="let number of numToDisplayOpts" [value]="number.number">{{number.number}}</option>
+  </select>
+
+  <div class="pull-right">
+    <button [popover]="myPopover" (onShown)="advancedSearchVisible = true" (onHidden)="advancedSearchVisible = false">
+      Refine search {{advancedSearchVisible ? 'V' : '>'}}
+    </button>
+
+    <popover-content #myPopover placement="bottom" [animation]="true" [closeOnClickOutside]="true" >
+      <ig-order-advanced-search></ig-order-advanced-search>
+    </popover-content>
+  </div>
+</div>
+
+<ig-order-list *ngIf="orders" [rows]="orders" [limit]="page.size"></ig-order-list>
+
+
+<div class="pagination-footer">
+  {{total}} found | View
+
+  <select [(ngModel)]="page.pageSize" (change)="load(page)">
+    <option *ngFor="let number of numToDisplayOpts" [value]="number.number">{{number.number}}</option>
+  </select>
+
+  <div class="float-right">
+    <ig-pagination [totalItems]="total" [itemsPerPage]="page.pageSize" id="orders" (pageChanged)="pageChanged(page, $event)" ></ig-pagination>
+  </div>
+</div>

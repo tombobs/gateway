@@ -1,0 +1,15 @@
+$footer-height: 66px;
+
+:host {
+  bottom: 0;
+  background: #5E777E;
+  height: $footer-height;
+  position: absolute;
+  width: 100%;
+
+  .footer-content {
+    color: white;
+    text-align: center;
+    padding: 25px;
+  }
+}

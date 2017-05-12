@@ -1,0 +1,14 @@
+$border: 1px solid #D2D8DA;
+
+.pagination-header {
+  background: rgb(249, 250, 250);
+  border: $border;
+
+  padding: 10px;
+}
+
+.pagination-footer {
+  border: $border;
+  overflow: auto;
+  padding: 5px;
+}

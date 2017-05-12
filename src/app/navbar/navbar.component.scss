@@ -1,0 +1,22 @@
+$navbar-height: 100px;
+$navbar-footer-height: $navbar-height - 60px;
+
+.navbar {
+  background: #1A3E47;
+
+  height: $navbar-height;
+}
+
+.navbar-footer {
+  background: #fff;
+
+  top: 41px;
+  height: $navbar-footer-height;
+  opacity: 0.1;
+  position: relative;
+
+}
+:host {
+  display: block;
+  min-height: $navbar-height;
+}

@@ -1,0 +1,43 @@
+<div>
+  <ngx-datatable [rows]="rows"
+                 [reorderable]="false"
+                 (page)="setPage($event)"
+                 [limit]="limit">
+
+    <ngx-datatable-column prop="name" [width]="270">
+      <ng-template let-value="value" ngx-datatable-cell-template>
+        <a href="/suppliers/{{value}}">{{value}}</a>
+      </ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column prop="status" [width]="130">
+      <ng-template let-value="value" ngx-datatable-cell-template>{{value}}</ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column prop="type" [width]="130">
+      <ng-template let-value="value" ngx-datatable-cell-template>{{value}}</ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column prop="region" [width]="125">
+      <ng-template let-value="value" ngx-datatable-cell-template>{{value}}</ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column prop="phoneNumber" name="Status" [width]="140">
+      <ng-template let-value="value" ngx-datatable-cell-template>{{value}}</ng-template>
+    </ngx-datatable-column>
+
+    <ngx-datatable-column prop="primaryUser" [width]="140">
+      <ng-template let-value="value" ngx-datatable-cell-template>{{value}}</ng-template>
+    </ngx-datatable-column>
+  </ngx-datatable>
+</div>
+
+<!--TODO: implement popover -->
+<!--<popover-content #myPopover-->
+<!--title="Popover title"-->
+<!--placement="left"-->
+<!--[animation]="true"-->
+<!--[closeOnClickOutside]="true" >-->
+<!--<b>Very</b> <span style="color: #C21F39">Dynamic</span> <span style="color: #00b3ee">Reusable</span>-->
+<!--<b><i><span style="color: #ffc520">Popover With</span></i></b> <small>Html support</small>.-->
+<!--</popover-content>-->

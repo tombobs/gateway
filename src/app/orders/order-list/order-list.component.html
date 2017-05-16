@@ -1,34 +1,34 @@
 <div>
   <ngx-datatable [rows]="rows"
                  [reorderable]="false"
-                 (page)="setPage($event)"
-                 [limit]="limit">
+                 (page)="setPage($event)">
 
-    <ngx-datatable-column prop="orderDate" [width]="180">
+
+    <ngx-datatable-column prop="dateCreated" name="Order date" [width]="130">
       <ng-template let-value="value" ngx-datatable-cell-template>
         {{value | date: 'dd/MM/yyyy'}}
       </ng-template>
     </ngx-datatable-column>
 
-    <ngx-datatable-column prop="orderItemId" [width]="150">
+    <ngx-datatable-column prop="orderId" [width]="130">
       <ng-template let-value="value" ngx-datatable-cell-template>
         <a href="/orders/{{value}}">{{value}}</a>
       </ng-template>
     </ngx-datatable-column>
 
-    <ngx-datatable-column prop="customerName" [width]="150">
+    <ngx-datatable-column prop="customerName" [width]="180">
       <ng-template let-value="value" ngx-datatable-cell-template>{{value}}</ng-template>
     </ngx-datatable-column>
 
-    <ngx-datatable-column prop="supplierName" [width]="150">
+    <ngx-datatable-column prop="supplierName" [width]="180">
       <ng-template let-value="value" ngx-datatable-cell-template>{{value}}</ng-template>
     </ngx-datatable-column>
 
-    <ngx-datatable-column prop="type" [width]="140">
+    <ngx-datatable-column prop="typeText" name="Type" [width]="165">
       <ng-template let-value="value" ngx-datatable-cell-template>{{value}}</ng-template>
     </ngx-datatable-column>
 
-    <ngx-datatable-column prop="status" [width]="120">
+    <ngx-datatable-column prop="statusText" name="Status" [width]="140">
       <ng-template let-value="value" ngx-datatable-cell-template>
         {{value}}
         <!--<span [popover]="myPopover" [popoverOnHover]="true"></span>-->

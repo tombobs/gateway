@@ -3,7 +3,6 @@ import { OrdersService } from './orders.service';
 import { Page } from '../pagination/page';
 declare var require: any;
 const paginationConfig = require('../../config/pagination.json');
-console.log(paginationConfig)
 
 @Component({
   selector: 'ig-orders',
@@ -12,12 +11,10 @@ console.log(paginationConfig)
 })
 export class OrdersComponent implements OnInit {
 
-  private advancedSearchVisible = false;
   private orders;
-  private total;
   private numToDisplayOpts;
   private page: Page;
-
+  private advancedSearch;
   constructor(private orderService: OrdersService) { }
 
   ngOnInit() {
@@ -33,12 +30,18 @@ export class OrdersComponent implements OnInit {
     this.load(page);
   }
 
-  load(query?: {pageSize, pageNumber}) {
+  doSearch(search) {
+    debugger;
+    //this.advancedSearch = search || this.advancedSearch;
+    this.load(Object.assign({}, this.page, {search}));
+  }
+
+  load(query?: {pageSize, pageNumber, search?}) {
     // const {pageSize, pageNumber} = query;
     this.orderService.getOrders(query).subscribe(data => {
       console.log(this.page)
-      this.orders = data.orders;
-      this.total = data.totalResults;
-    });
+      this.orders = data.results;
+      this.page.totalResults = data.totalResults;
+    }, err => alert(err));
   }
 }

@@ -103,8 +103,9 @@ export class PaginationComponent implements OnInit, IPaginationConfig {
     if (_previous === this._page || typeof _previous === 'undefined') {
       return;
     }
-
+    debugger
     this.pageChanged.emit({
+
       page: this._page,
       itemsPerPage: this.itemsPerPage
     });

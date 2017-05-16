@@ -1,0 +1,18 @@
+<div class="row-fluid">
+  <div class="col-sm-2">
+    {{page.totalResults}} found |
+  </div>
+  <div class="col-sm-1">
+    View
+  </div>
+  <div class="col-sm-2">
+    <select [(ngModel)]="page.pageSize" (change)="load(page)" class="form-control">
+      <option *ngFor="let number of numToDisplayOpts" [value]="number.number">{{number.number}}</option>
+    </select>
+  </div>
+
+  <div class="float-right">
+    <ig-pagination [totalItems]="page.totalResults" [itemsPerPage]="page.pageSize"
+                   (pageChanged)="pageChanged($event)"></ig-pagination>
+  </div>
+</div>

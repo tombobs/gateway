@@ -1,0 +1,12 @@
+{
+  "suppliers": [
+    {
+      "supplierId": 1,
+      "supplierName": "supplier 1",
+      "status": "Inactive",
+      "type": "Repairer",
+      "region"
+    }
+  ],
+  "totalResults": 10
+}

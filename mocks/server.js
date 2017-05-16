@@ -17,9 +17,9 @@ app.use((req, res, next) => {
 })
 
 app.use('/order/list', (req, res) => {
-  const {pageSize=10, pageNumber=1} = req.body.search;
+  const {pageSize=10, pageNumber=1} = req.body;
   let orderList = [...orders.data.rows].slice((pageNumber-1)*pageSize, (pageNumber)*pageSize);
-  res.send({data: {rows: orderList, total: orders.data.total}});
+  res.send({orders: orderList, totalResults: orders.data.total});
 })
 
 app.use('/lookups', (req, res) => {
@@ -42,4 +42,12 @@ app.use('/lookups', (req, res) => {
   res.json(response);
 })
 
+
+app.use('/logon', (req, res) => {
+  res.status(401).json({
+    reason: 'invalid password'
+    // username: 'lol',
+    // userId: 1
+  })
+})
 app.listen(8080)

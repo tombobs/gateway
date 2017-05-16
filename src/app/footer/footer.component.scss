@@ -4,7 +4,7 @@ $footer-height: 66px;
   bottom: 0;
   background: #5E777E;
   height: $footer-height;
-  position: absolute;
+  position: fixed;
   width: 100%;
 
   .footer-content {

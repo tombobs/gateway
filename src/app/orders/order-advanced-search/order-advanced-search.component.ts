@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IMyOptions} from 'mydatepicker';
 import {SuppliersService} from "../../suppliers/suppliers.service";
-import {CompleterData, CompleterService} from 'ng2-completer';
+//import {CompleterData, CompleterService} from 'ng2-completer';
 import {apiUrl} from '../../../config/api';
 import * as moment from 'moment';
 
@@ -26,11 +26,9 @@ export class OrderAdvancedSearchComponent implements OnInit {
   private orderItemId: string;
   private supplierName: string;
 
-  private dataService: CompleterData;
+  @Output() submit: EventEmitter<any> = new EventEmitter();
 
-  @Output() doSearch: EventEmitter<any> = new EventEmitter();
-
-  constructor(private suppliersService: SuppliersService, private completerService: CompleterService) {
+  constructor(private suppliersService: SuppliersService) {
     // this.suppliers = [
     //   {
     //     label: 'Value 1',
@@ -45,12 +43,12 @@ export class OrderAdvancedSearchComponent implements OnInit {
     //     value: 3
     //   }
     // ];
-    this.supplierSearchUrl = apiUrl + 'supplier/lookup?Name=';
-    this.dataService = this.completerService.remote(this.supplierSearchUrl, 'supplierName', 'supplierName');
+    //this.supplierSearchUrl = apiUrl + 'supplier/lookup?Name=';
+    //this.dataService = this.completerService.remote(this.supplierSearchUrl, 'supplierName', 'supplierName');
   }
 
   ngOnInit() {
-    this.suppliersService.getSuppliers().subscribe(data => {
+    this.suppliersService.getSuppliers({}).subscribe(data => {
       console.log(data);
     });
   }
@@ -62,6 +60,6 @@ export class OrderAdvancedSearchComponent implements OnInit {
       supplierId: this.supplierId,
       orderItemId: this.orderItemId
     };
-    this.doSearch.emit(search);
+    this.submit.emit(search);
   }
 }

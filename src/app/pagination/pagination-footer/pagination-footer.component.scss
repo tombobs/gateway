@@ -1,4 +1,7 @@
+$border: 1px solid #D2D8DA;
+
 :host {
+  border: $border;
   display: block;
   overflow: auto;
   background: rgb(249, 250, 250);

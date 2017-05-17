@@ -5,7 +5,7 @@
   <div class="col-sm-1">View</div>
   <div class="col-sm-2">
     <select [(ngModel)]="page.pageSize" class="form-control" (change)="onPageChange()">
-      <option *ngFor="let number of numToDisplayOpts" [value]="number.number">{{number.number}}</option>
+      <option *ngFor="let size of page.pageSizes" [value]="size">{{size}}</option>
     </select>
   </div>
 

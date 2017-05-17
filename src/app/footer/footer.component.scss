@@ -2,10 +2,13 @@ $footer-height: 66px;
 
 :host {
   bottom: 0;
+  right: 0;
+  left: 0;
   background: #5E777E;
   height: $footer-height;
   position: fixed;
   width: 100%;
+  z-index: 10;
 
   .footer-content {
     color: white;

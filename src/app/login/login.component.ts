@@ -22,8 +22,9 @@ export class LoginComponent implements OnInit {
 
   login() {
     // without this the router redirects back to /login
-    this.router.navigate([''], {skipLocationChange: true}); // TODO: work out why that happens and remove this line
+    //this.router.navigate([''], {skipLocationChange: true}); // TODO: work out why that happens and remove this line
 
+  debugger
     this.loginService.login(this.user, this.password)
       .subscribe(res => {
         debugger

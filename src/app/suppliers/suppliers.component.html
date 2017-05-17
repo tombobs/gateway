@@ -1,10 +1,12 @@
-<ig-pagination-header [(page)]="page" saved-searches="true">
+<h2 class="page-heading">Suppliers</h2>
+
+<ig-pagination-header [page]="page" (pageChange)="onPageChange($event)">
   <div advanced-search>
-    lol
+    supplier advanced search goes here
   </div>
 </ig-pagination-header>
 
 <ig-suppliers-list [rows]="suppliers"></ig-suppliers-list>
 
 
-<ig-pagination-footer [page]="page"></ig-pagination-footer>
+<ig-pagination-footer [page]="page" (pageChange)="onPageChange($event)"></ig-pagination-footer>

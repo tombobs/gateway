@@ -10,25 +10,28 @@ $logo-top-margin: 25px;
 
 .navbar {
   background: #1A3E47;
-
   height: $navbar-height;
 }
 
 .nav-links {
-  position: absolute;
-  bottom: 10px;
-  color: white;
-
+  position: relative;
+  top: 27px;
   a {
-    color: #c7c7c7;;
+    color: #c7c7c7;
     margin-right: 20px;
-
-    &:hover {
+    &:hover,:focus {
       color: white;
+      text-decoration: none;
+    }
+    &.active {
+      color: #c3d081;
     }
 
-    &.active {
-      color: white;
+    &.home {
+      font-size: 18px;
+      margin-left: 2px;
+      position: relative;
+      top: 1px;
     }
   }
 }

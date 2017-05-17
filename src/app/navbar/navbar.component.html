@@ -1,11 +1,20 @@
 <div class="navbar navbar-fixed-top">
   <div class="container">
-    <div class="col-sm-2 logo-container">
-      <img src="../../assets/Client-1.png">
-    </div>
-    <div class="col-sm-6 col-sm-offset-1 nav-links">
-      <a [routerLink]="['/orders']" routerLinkActive="active">Orders</a>
-      <a [routerLink]="['/suppliers']" routerLinkActive="active">Suppliers</a>
+    <div class="row">
+      <div class="col-sm-2 logo-container">
+        <img src="../../assets/Client-1.png">
+      </div>
+      <div class="col-sm-6 nav-links">
+        <a [routerLink]="['/home']" routerLinkActive="active" class="home">
+          <i class="fa fa-home"></i>
+        </a>
+        <a [routerLink]="['/orders']" routerLinkActive="active">
+          Orders
+        </a>
+        <a [routerLink]="['/suppliers']" routerLinkActive="active">
+          Suppliers
+        </a>
+      </div>
     </div>
   </div>
   <div class="navbar-footer"></div>

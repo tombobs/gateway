@@ -4,6 +4,8 @@ import { FormsModule, NgModel } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import {NgxPaginationModule} from 'ngx-pagination';
+import {PopoverModule} from "ngx-popover";
+import { TypeaheadComponent } from './typeahead/typeahead.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarModule } from './navbar/navbar.module';
@@ -16,32 +18,32 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 
-import {} from 'ng2-bootstrap-typeahead';
-import { PaginationHeaderComponent } from './pagination/pagination-header/pagination-header.component';
+import {PaginationHeaderComponent} from './pagination/pagination-header/pagination-header.component';
 import {PaginationHeaderModule} from "./pagination/pagination-header/pagination-header.module";
-import {PopoverModule} from "ngx-popover";
-import { PaginationFooterComponent } from './pagination/pagination-footer/pagination-footer.component';
-import {PaginationComponent} from "./pagination/pager/pagination.component";
+import {PaginationFooterComponent} from './pagination/pagination-footer/pagination-footer.component';
+import {PagerComponent} from "./pagination/pager/pager.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    TypeaheadComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     PopoverModule,
-    OrdersModule,
     NgxPaginationModule,
+    AppRoutingModule,
+
+    OrdersModule,
     NavbarModule,
     FooterModule,
     LoginModule,
     PaginationHeaderModule,
     SuppliersModule,
-    AppRoutingModule,
 
   ],
   providers: [NgModel],

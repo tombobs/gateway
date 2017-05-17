@@ -6,16 +6,15 @@ import {OrdersService} from './orders.service';
 import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 import {FormsModule} from "@angular/forms";
 import {PopoverModule} from 'ngx-popover';
-import {PaginationComponent} from '../pagination/pager/pagination.component';
+import {PagerComponent} from '../pagination/pager/pager.component';
 
-// import { PaginationComponent } from '../pagination/pagination.component';
+// import { PagerComponent } from '../pagination/pagination.component';
 import {NgxPaginationModule, PaginationControlsComponent} from 'ngx-pagination';
 import {OrderAdvancedSearchComponent} from './order-advanced-search/order-advanced-search.component';
 import {MyDatePickerModule} from 'mydatepicker';
 import {SelectModule} from 'ng-select';
 import {SuppliersService} from "../suppliers/suppliers.service";
 import {NguiAutoCompleteModule} from "@ngui/auto-complete";
-import {CompleterService, LocalData, Ng2CompleterModule, RemoteData} from "ng2-completer";
 import {PaginationHeaderModule} from "../pagination/pagination-header/pagination-header.module";
 import {PaginationFooterModule} from "../pagination/pagination-footer/pagination-footer.module";
 
@@ -33,15 +32,11 @@ import {PaginationFooterModule} from "../pagination/pagination-footer/pagination
     PopoverModule,
     MyDatePickerModule,
     SelectModule,
-    Ng2CompleterModule,
     PaginationHeaderModule,
   ],
   providers: [
     OrdersService,
-    SuppliersService,
-    CompleterService,
-    // LocalData,
-    // RemoteData
+    SuppliersService
   ]
 })
 export class OrdersModule {

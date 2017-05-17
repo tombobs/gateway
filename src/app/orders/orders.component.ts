@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdersService } from './orders.service';
 import { Page } from '../pagination/page';
-declare var require: any;
-const paginationConfig = require('../../config/pagination.json');
+
+class OrderAdvancedSearch {
+
+}
 
 @Component({
   selector: 'ig-orders',
@@ -12,34 +14,29 @@ const paginationConfig = require('../../config/pagination.json');
 export class OrdersComponent implements OnInit {
 
   private orders;
-  private numToDisplayOpts;
   private page: Page;
-  private advancedSearch;
+  private advancedSearch: any;
   constructor(private orderService: OrdersService) { }
 
   ngOnInit() {
     this.page = new Page();
-    this.numToDisplayOpts = paginationConfig.numToDisplayOptions;
-    this.page.pageSize = this.numToDisplayOpts[0].number;
-    this.load(this.page);
+    this.load();
   }
 
-  pageChanged(page, $event) {
-    this.page.pageSize = Number($event.itemsPerPage);
-    this.page.pageNumber = $event.page;
-    this.load(page);
+  onPageChange(page) {
+    page.pageSize = Number(page.pageSize);
+    this.page = page;
+    this.load();
   }
 
-  doSearch(search) {
-    debugger;
-    //this.advancedSearch = search || this.advancedSearch;
-    this.load(Object.assign({}, this.page, {search}));
+  onSearchChange(search) {
+    this.advancedSearch = search;
+    this.load();
   }
 
-  load(query?: {pageSize, pageNumber, search?}) {
-    // const {pageSize, pageNumber} = query;
-    this.orderService.getOrders(query).subscribe(data => {
-      console.log(this.page)
+  private load() {
+    const orderSearch = Object.assign({}, this.page, this.advancedSearch);
+    this.orderService.getOrders(orderSearch).subscribe(data => {
       this.orders = data.results;
       this.page.totalResults = data.totalResults;
     }, err => alert(err));

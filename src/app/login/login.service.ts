@@ -15,7 +15,7 @@ export class LoginService {
   constructor(private http: Http) { }
 
   login(user: string, password: string) {
-    return this.http.post(this.apiUrl, {user, password})
+    return this.http.post(this.apiUrl, {user, password}, {withCredentials: true})
        .map(res => {
          return res.json()
        })

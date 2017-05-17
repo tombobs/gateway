@@ -1,7 +1,6 @@
 import {Component, OnInit, Input, Output, ElementRef, EventEmitter, Self, Renderer} from '@angular/core';
 import {NgFor, NgIf} from '@angular/common';
 import {NgModel} from '@angular/forms';
-// import {IAttribute} from './IAttribute';
 
 export interface IPaginationConfig {
   maxSize: number;
@@ -34,12 +33,12 @@ const paginationConfig: IPaginationConfig = {
 
 
 @Component({
-  selector: 'ig-pagination',
-  templateUrl: './pagination.component.html',
-  styleUrls: ['./pagination.component.scss'],
+  selector: 'ig-pager',
+  templateUrl: './pager.component.html',
+  styleUrls: ['./pager.component.scss'],
   viewProviders: [NgModel]
 })
-export class PaginationComponent implements OnInit, IPaginationConfig {
+export class PagerComponent implements OnInit, IPaginationConfig {
   @Input() public maxSize: number;
 
   @Input() public boundaryLinks: boolean;
@@ -105,7 +104,6 @@ export class PaginationComponent implements OnInit, IPaginationConfig {
     }
     debugger
     this.pageChanged.emit({
-
       page: this._page,
       itemsPerPage: this.itemsPerPage
     });

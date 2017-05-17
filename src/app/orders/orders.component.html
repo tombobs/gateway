@@ -2,12 +2,12 @@
   Order items
 </h2>
 
-<ig-pagination-header [page]="page" (pageChange)="pageChanged($event)" >
+<ig-pagination-header [page]="page" (pageChange)="onPageChange($event)">
   <div advanced-search>
-    <ig-order-advanced-search (doSearch)="doSearch($event)"></ig-order-advanced-search>
+    <ig-order-advanced-search (submit)="onSearchChange($event)"></ig-order-advanced-search>
   </div>
 </ig-pagination-header>
 
 <ig-order-list *ngIf="orders" [rows]="orders"></ig-order-list>
 
-<ig-pagination-footer [page]="page" (pageChange)="pageChanged($event)"></ig-pagination-footer>
+<ig-pagination-footer [page]="page" (pageChange)="onPageChange($event)"></ig-pagination-footer>

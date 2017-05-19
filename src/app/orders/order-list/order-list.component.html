@@ -31,27 +31,39 @@
     <!--<ngx-datatable-column prop="statusText" name="Status" [width]="140">-->
       <!--<ng-template let-value="value" ngx-datatable-cell-template>-->
         <!--{{value}}-->
-        <!--&lt;!&ndash;<span [popover]="myPopover" [popoverOnHover]="true"></span>&ndash;&gt;-->
+        <!--&lt;!&ndash;
       <!--</ng-template>-->
     <!--</ngx-datatable-column>-->
 
   <!--</ngx-datatable>-->
-  <table>
+  <table class="table table-striped table-hover table-condensed ">
 
     <tbody>
     <tr *ngFor="let row of rows">
-      <td>{{row | json}}</td>
+      <td>{{row.orderDate | date}}</td>
+      <td>
+        <a [routerLink]="row.orderItemId"> {{row.orderItemId}}</a>
+      </td>
+      <td>{{row.customerName}}</td>
+      <td>{{row.supplierName}}</td>
+      <td>{{row.type}}</td>
+      <td>{{row.status}}</td>
+      <td>
+        <span [popover]="myPopover" [popoverOnHover]="true">
+          <i class="fa fa-info-circle"></i>
+        </span>
+      </td>
     </tr>
     </tbody>
   </table>
 </div>
 
 <!--TODO: implement popover -->
-<!--<popover-content #myPopover-->
-                 <!--title="Popover title"-->
-                 <!--placement="left"-->
-                 <!--[animation]="true"-->
-                 <!--[closeOnClickOutside]="true" >-->
+<popover-content #myPopover
+                 placement="right"
+                 [animation]="true">
+                 lol
+</popover-content>
   <!--<b>Very</b> <span style="color: #C21F39">Dynamic</span> <span style="color: #00b3ee">Reusable</span>-->
   <!--<b><i><span style="color: #ffc520">Popover With</span></i></b> <small>Html support</small>.-->
 <!--</popover-content>-->

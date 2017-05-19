@@ -1,22 +1,20 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {OrdersComponent} from './orders.component';
-import {OrderListComponent} from './order-list/order-list.component';
-import {OrdersService} from './orders.service';
+import {RouterModule} from "@angular/router";
 import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 import {FormsModule} from "@angular/forms";
 import {PopoverModule} from 'ngx-popover';
-import {PagerComponent} from '../pagination/pager/pager.component';
-
-// import { PagerComponent } from '../pagination/pagination.component';
-import {NgxPaginationModule, PaginationControlsComponent} from 'ngx-pagination';
-import {OrderAdvancedSearchComponent} from './order-advanced-search/order-advanced-search.component';
 import {MyDatePickerModule} from 'mydatepicker';
 import {SelectModule} from 'ng-select';
+
+import {OrdersComponent} from './orders.component';
+import {OrderListComponent} from './order-list/order-list.component';
+import {OrdersService} from './orders.service';
+import {OrderAdvancedSearchComponent} from './order-advanced-search/order-advanced-search.component';
 import {SuppliersService} from "../suppliers/suppliers.service";
-import {NguiAutoCompleteModule} from "@ngui/auto-complete";
-import {PaginationHeaderModule} from "../pagination/pagination-header/pagination-header.module";
-import {PaginationFooterModule} from "../pagination/pagination-footer/pagination-footer.module";
+import {PaginationHeaderModule} from "../components/pagination/pagination-header/pagination-header.module";
+import {PaginationFooterModule} from "../components/pagination/pagination-footer/pagination-footer.module";
+import {SavedSearchesModule} from "../components/saved-searches/saved-searches.module";
 
 @NgModule({
   declarations: [
@@ -27,12 +25,14 @@ import {PaginationFooterModule} from "../pagination/pagination-footer/pagination
   imports: [
     CommonModule,
     FormsModule,
+    RouterModule,
     PaginationFooterModule,
     NgxDatatableModule,
     PopoverModule,
     MyDatePickerModule,
     SelectModule,
     PaginationHeaderModule,
+    SavedSearchesModule
   ],
   providers: [
     OrdersService,

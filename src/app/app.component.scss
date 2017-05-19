@@ -1,3 +1,9 @@
-.container {
-  margin-bottom: 66px;
+:host {
+  display: block;
+  overflow: auto;
+  margin-bottom: 80px;
+}
+
+.page-title {
+  color: #de3855;
 }

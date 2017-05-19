@@ -1,8 +1,7 @@
-<h2 class="page-heading">
-  Order items
-</h2>
-
 <ig-pagination-header [page]="page" (pageChange)="onPageChange($event)">
+  <div saved-searches>
+    <ig-saved-searches></ig-saved-searches>
+  </div>
   <div advanced-search>
     <ig-order-advanced-search (submit)="onSearchChange($event)"></ig-order-advanced-search>
   </div>

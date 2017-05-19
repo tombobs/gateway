@@ -20,8 +20,8 @@ app.use((req, res, next) => {
 
 app.use('/supplier/list', (req, res) => {
   const {pageSize=10, pageNumber=1} = req.query;
-  let orderList = [...orders.data.rows].slice((pageNumber-1)*pageSize, (pageNumber)*pageSize);
-  res.send({results: orderList, totalResults: orders.data.total});
+  let supplierList = [...suppliers.data].slice((pageNumber-1)*pageSize, (pageNumber)*pageSize);
+  res.send({results: supplierList, totalResults: suppliers.totalResults});
 })
 
 app.use('/orderitem/list', (req, res) => {

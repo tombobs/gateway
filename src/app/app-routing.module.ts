@@ -3,25 +3,43 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { OrdersComponent } from './orders/orders.component';
 import { LoginComponent } from './login/login.component';
-import { FooterComponent } from './footer/footer.component';
 import {SuppliersComponent} from "./suppliers/suppliers.component";
+import {HomeComponent} from "./home/home.component";
+import {SuppliersDetailComponent} from "./suppliers/suppliers-detail/suppliers-detail.component";
 
 const routes: Routes = [
   {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
     path: 'orders',
-    component: OrdersComponent
+    component: OrdersComponent,
+    data: {
+      pageTitle: 'Order items'
+    }
   },
   {
     path: 'login',
     component: LoginComponent
   },
-  {
-    path: 'footer',
-    component: FooterComponent
-  },
+
   {
     path: 'suppliers',
-    component: SuppliersComponent
+    component: SuppliersComponent,
+    data: {
+      pageTitle: 'Suppliers'
+    },
+    children: [
+      {
+        path: ':id',
+        component: SuppliersDetailComponent
+      }
+    ]
+  },
+  {
+    path: '**',
+    redirectTo: 'home'
   }
 ];
 

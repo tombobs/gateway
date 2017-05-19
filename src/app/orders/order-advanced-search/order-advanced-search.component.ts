@@ -2,7 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IMyOptions} from 'mydatepicker';
 import {SuppliersService} from "../../suppliers/suppliers.service";
 //import {CompleterData, CompleterService} from 'ng2-completer';
-import {apiUrl} from '../../../config/api';
+// import {apiUrl} from '../../../config/api';
 import * as moment from 'moment';
 
 @Component({
@@ -61,5 +61,12 @@ export class OrderAdvancedSearchComponent implements OnInit {
       orderItemId: this.orderItemId
     };
     this.submit.emit(search);
+    this.close();
+  }
+
+  // workaround..
+  selector = '.advanced-search-btn';
+  close = () => {
+    document.querySelector(this.selector).dispatchEvent(new Event('click'));
   }
 }

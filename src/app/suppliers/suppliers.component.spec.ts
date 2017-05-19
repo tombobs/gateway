@@ -1,12 +1,12 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import {} from ''
 import { SuppliersComponent } from './suppliers.component';
-import {PaginationHeaderModule} from "../pagination/pagination-header/pagination-header.module";
-import {PaginationHeaderComponent} from "../pagination/pagination-header/pagination-header.component";
+import {PaginationHeaderModule} from "../components/pagination/pagination-header/pagination-header.module";
+import {PaginationHeaderComponent} from "../components/pagination/pagination-header/pagination-header.component";
 import {SuppliersModule} from "./suppliers.module";
 import {SuppliersListComponent} from "./suppliers-list/suppliers-list.component";
-import {PaginationFooterModule} from "../pagination/pagination-footer/pagination-footer.module";
-import {PaginationFooterComponent} from "../pagination/pagination-footer/pagination-footer.component";
+import {PaginationFooterModule} from "../components/pagination/pagination-footer/pagination-footer.module";
+import {PaginationFooterComponent} from "../components/pagination/pagination-footer/pagination-footer.component";
 import {PopoverModule} from "ngx-popover/index";
 import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 import {SuppliersService} from "./suppliers.service";

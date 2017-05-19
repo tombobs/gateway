@@ -1,6 +1,6 @@
-<ul class="pagination" [ngClass]="classMap">
+<ul class="pagination" [ngClass]="classMap" *ngIf="totalPages > 1">
   <li class="pagination-first page-item"
-      *ngIf="boundaryLinks"
+      *ngIf="boundaryLinks || (boundaryLinkLimit && totalPages > boundaryLinkLimit)"
       [class.disabled]="noPrevious()||disabled">
     <a class="page-link" href (click)="selectPage(1, $event)" [innerHTML]="getText('first')"></a>
   </li>

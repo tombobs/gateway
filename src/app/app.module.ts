@@ -9,6 +9,7 @@ import {PopoverModule} from "ngx-popover";
 import { TypeaheadComponent } from './components/typeahead/typeahead.component';
 import { Ng2PageTransitionModule } from "ng2-page-transition";
 
+import { APP_CONFIG, AppConfig } from './app.config';
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarModule } from './navbar/navbar.module';
 import { FooterModule } from './footer/footer.module';
@@ -45,7 +46,10 @@ import { HomeComponent } from './home/home.component';
     AppRoutingModule,
     RouterModule
   ],
-  providers: [NgModel],
+  providers: [
+    NgModel,
+    { provide: APP_CONFIG, useValue: AppConfig }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

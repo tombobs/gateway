@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrdersService } from './orders.service';
-import { Page } from '../pagination/page';
+import { Page } from '../components/pagination/page';
 
 class OrderAdvancedSearch {
 
@@ -16,6 +16,7 @@ export class OrdersComponent implements OnInit {
   private orders;
   private page: Page;
   private advancedSearch: any;
+  visible = false;
   constructor(private orderService: OrdersService) { }
 
   ngOnInit() {
@@ -31,6 +32,8 @@ export class OrdersComponent implements OnInit {
 
   onSearchChange(search) {
     this.advancedSearch = search;
+    debugger;
+    this.visible = false;
     this.load();
   }
 

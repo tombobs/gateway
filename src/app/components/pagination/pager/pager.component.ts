@@ -6,6 +6,7 @@ export interface IPaginationConfig {
   maxSize: number;
   itemsPerPage: number;
   boundaryLinks: boolean;
+  boundaryLinkLimit: number;
   directionLinks: boolean;
   firstText: string;
   previousText: string;
@@ -22,7 +23,8 @@ export interface IPageChangedEvent {
 const paginationConfig: IPaginationConfig = {
   maxSize:  5,
   itemsPerPage: 10,
-  boundaryLinks: true,
+  boundaryLinks: false,
+  boundaryLinkLimit: 5,
   directionLinks: true,
   firstText: '<<',
   previousText: '<',
@@ -42,6 +44,7 @@ export class PagerComponent implements OnInit, IPaginationConfig {
   @Input() public maxSize: number;
 
   @Input() public boundaryLinks: boolean;
+  @Input() public boundaryLinkLimit: number;
   @Input() public directionLinks: boolean;
   @Input() public firstText: string;
   @Input() public previousText: string;

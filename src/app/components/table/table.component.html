@@ -1,0 +1,12 @@
+<table class="table table-bordered table-striped table-responsive table-condensed">
+  <thead>
+  <th *ngFor="let column of columns">{{column.heading}}</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let row of rows">
+    <td *ngFor="let column of columns">
+      {{row[column.key]}}
+    </td>
+  </tr>
+  </tbody>
+</table>

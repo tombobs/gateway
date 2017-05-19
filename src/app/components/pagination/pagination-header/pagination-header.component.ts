@@ -11,6 +11,9 @@ export class PaginationHeaderComponent {
   @Input() page: Page;
   @Output() pageChange = new EventEmitter();
 
+  savedSearchesVisible = false;
+  advancedSearchVisible = false;
+
   onPageChange() {
     this.pageChange.emit(this.page);
   }

@@ -61,5 +61,12 @@ export class OrderAdvancedSearchComponent implements OnInit {
       orderItemId: this.orderItemId
     };
     this.submit.emit(search);
+    this.close();
+  }
+
+  // workaround..
+  selector = '.advanced-search-btn';
+  close = () => {
+    document.querySelector(this.selector).dispatchEvent(new Event('click'));
   }
 }

@@ -1,6 +1,17 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { OrdersComponent } from './orders.component';
+import {NO_ERRORS_SCHEMA} from "@angular/core";
+import {Observable} from "rxjs/Observable";
+import {OrdersService} from "./orders.service";
+
+class MockOrderService {
+  getOrders() {
+    return {
+      subscribe: () => {}
+    };
+  }
+}
 
 describe('OrdersComponent', () => {
   let component: OrdersComponent;
@@ -8,7 +19,9 @@ describe('OrdersComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ OrdersComponent ]
+      declarations: [ OrdersComponent ],
+      providers: [{provide: OrdersService, useClass: MockOrderService}],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));

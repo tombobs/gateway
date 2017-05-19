@@ -2,16 +2,32 @@ import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { AppComponent } from './app.component';
+import {NavbarModule} from "./navbar/navbar.module";
+import {RouterLink, RouterModule} from "@angular/router";
+import {Component, NO_ERRORS_SCHEMA} from "@angular/core";
+@Component({
+  template: ''
+})
+class DummyComponent {
+}
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        // .withRoutes([
+        //   { path: 'settings/:collection/edit/:item', component: DummyComponent }
+        // ]),
+        NavbarModule,
+        // RouterModule
+
       ],
       declarations: [
         AppComponent
+
       ],
+      schemas: [NO_ERRORS_SCHEMA]
     }).compileComponents();
   }));
 
@@ -21,11 +37,7 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   }));
 
-  it(`should have as title 'app works!'`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('app works!');
-  }));
+
 
   it('should render title in a h1 tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);

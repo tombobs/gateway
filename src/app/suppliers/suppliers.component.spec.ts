@@ -9,6 +9,9 @@ import {PaginationFooterModule} from "../pagination/pagination-footer/pagination
 import {PaginationFooterComponent} from "../pagination/pagination-footer/pagination-footer.component";
 import {PopoverModule} from "ngx-popover/index";
 import {NgxDatatableModule} from '@swimlane/ngx-datatable';
+import {SuppliersService} from "./suppliers.service";
+import {Http, HttpModule, XHRBackend} from "@angular/http";
+import {MockBackend} from "@angular/http/testing";
 
 describe('SuppliersComponent', () => {
   let component: SuppliersComponent;
@@ -22,8 +25,15 @@ describe('SuppliersComponent', () => {
         NgxDatatableModule,
         PopoverModule,
         PaginationHeaderModule,
-        PaginationFooterModule],
-      providers: [PaginationHeaderComponent, PaginationFooterComponent]
+        PaginationFooterModule,
+        HttpModule
+      ],
+      providers: [
+        PaginationHeaderComponent,
+        PaginationFooterComponent,
+        SuppliersService,
+        { provide: XHRBackend, useClass: MockBackend }
+      ]
     })
     .compileComponents();
   }));

@@ -7,6 +7,10 @@
   </div>
 </ig-pagination-header>
 
-<ig-table [columns]="columns" [rows]="suppliers"></ig-table>
+<ig-table [columns]="columns" [rows]="suppliers">
+  <td name>
+    <a></a>
+  </td>
+</ig-table>
 
 <ig-pagination-footer [page]="page" (pageChange)="onPageChange($event)"></ig-pagination-footer>

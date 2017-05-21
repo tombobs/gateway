@@ -39,7 +39,6 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
 
     OrdersModule,
-    NavbarModule,
     FooterModule,
     LoginModule,
     SuppliersModule,

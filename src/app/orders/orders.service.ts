@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
-import { APP_CONFIG, IAppConfig } from '../app.config';
+import { APP_CONFIG } from '../app.config';
 
 
 
@@ -14,7 +14,7 @@ export class OrdersService {
 
   private apiUrl;
   constructor(
-    @Inject(APP_CONFIG) private config: IAppConfig,
+    @Inject(APP_CONFIG) private config,
     private http: Http
   ) {
     this.apiUrl = config.apiUrl + 'orderitem/';

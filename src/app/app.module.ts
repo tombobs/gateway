@@ -8,6 +8,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import {PopoverModule} from "ngx-popover";
 import { TypeaheadComponent } from './components/typeahead/typeahead.component';
 import { Ng2PageTransitionModule } from "ng2-page-transition";
+import { AgmCoreModule } from 'angular2-google-maps/core';
 
 import { APP_CONFIG, AppConfig } from './app.config';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +21,7 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
+import { SideNavComponent } from './components/side-nav/side-nav.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,9 @@ import { HomeComponent } from './home/home.component';
     NgxPaginationModule,
     Ng2PageTransitionModule,
     BrowserAnimationsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDtJNl2tAZMoyAcdtInBYENsvAIKpQ12mk'
+    }),
 
     OrdersModule,
     FooterModule,

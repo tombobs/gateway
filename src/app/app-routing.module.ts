@@ -6,6 +6,9 @@ import { LoginComponent } from './login/login.component';
 import {SuppliersComponent} from "./suppliers/suppliers.component";
 import {HomeComponent} from "./home/home.component";
 import {SuppliersDetailComponent} from "./suppliers/suppliers-detail/suppliers-detail.component";
+import {SuppliersListComponent} from "./suppliers/suppliers-list/suppliers-list.component";
+import {SuppliersDetailOverviewComponent} from "./suppliers/suppliers-detail/suppliers-detail-overview/suppliers-detail-overview.component";
+import {SuppliersDetailMapComponent} from "./suppliers/suppliers-detail/suppliers-detail-map/suppliers-detail-map.component";
 
 const routes: Routes = [
   {
@@ -32,10 +35,28 @@ const routes: Routes = [
     },
     children: [
       {
+        path: 'list',
+        component: SuppliersListComponent
+      },
+      {
         path: ':id',
-        component: SuppliersDetailComponent
+        component: SuppliersDetailComponent,
+        children: [
+          {
+            path: 'overview',
+            component: SuppliersDetailOverviewComponent
+          },
+          {
+            path: 'map',
+            component: SuppliersDetailMapComponent
+          }
+        ]
       }
     ]
+  },
+  {
+    path: 'supplier/:id',
+    component: SuppliersDetailComponent
   },
   {
     path: '**',

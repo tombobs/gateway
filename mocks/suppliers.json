@@ -2,7 +2,7 @@
   "data": [
     {
       "supplierId": 1,
-      "supplierName": "supplier 1",
+      "name": "supplier 1",
       "status": "Inactive",
       "type": "Repairer",
       "region": "r1",
@@ -11,7 +11,7 @@
     },
     {
       "supplierId": 2,
-      "supplierName": "supplier 2",
+      "name": "supplier 2",
       "status": "Inactive",
       "type": "Repairer",
       "region": "r1",
@@ -20,7 +20,7 @@
     },
     {
       "supplierId": 1,
-      "supplierName": "supplier 3",
+      "name": "supplier 3",
       "status": "Inactive",
       "type": "Repairer",
       "region": "r1",
@@ -29,7 +29,7 @@
     },
     {
       "supplierId": 1,
-      "supplierName": "supplier 4",
+      "name": "supplier 4",
       "status": "Inactive",
       "type": "Repairer",
       "region": "r1",
@@ -38,7 +38,7 @@
     },
     {
       "supplierId": 1,
-      "supplierName": "supplier 5",
+      "name": "supplier 5",
       "status": "Inactive",
       "type": "Repairer",
       "region": "r1",
@@ -47,7 +47,7 @@
     },
     {
       "supplierId": 1,
-      "supplierName": "supplier 6",
+      "name": "supplier 6",
       "status": "Inactive",
       "type": "Repairer",
       "region": "r1",
@@ -56,7 +56,7 @@
     },
     {
       "supplierId": 1,
-      "supplierName": "supplier 7",
+      "name": "supplier 7",
       "status": "Inactive",
       "type": "Repairer",
       "region": "r1",
@@ -65,7 +65,7 @@
     },
     {
       "supplierId": 1,
-      "supplierName": "supplier 8",
+      "name": "supplier 8",
       "status": "Inactive",
       "type": "Repairer",
       "region": "r1",
@@ -74,7 +74,7 @@
     },
     {
       "supplierId": 1,
-      "supplierName": "supplier 9",
+      "name": "supplier 9",
       "status": "Inactive",
       "type": "Repairer",
       "region": "r1",
@@ -83,7 +83,7 @@
     },
     {
       "supplierId": 1,
-      "supplierName": "supplier 10",
+      "name": "supplier 10",
       "status": "Inactive",
       "type": "Repairer",
       "region": "r1",
@@ -92,14 +92,14 @@
     },
     {
       "supplierId": 1,
-      "supplierName": "supplier 11",
+      "name": "supplier 11",
       "status": "Inactive",
       "type": "Repairer",
       "region": "r1"
     },
     {
       "supplierId": 1,
-      "supplierName": "supplier 12",
+      "name": "supplier 12",
       "status": "Inactive",
       "type": "Repairer",
       "region": "r1"

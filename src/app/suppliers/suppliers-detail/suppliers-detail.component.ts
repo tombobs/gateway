@@ -7,6 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuppliersDetailComponent implements OnInit {
 
+  sections = [
+    {
+      label: 'Overview',
+      route: 'overview'
+    },
+    {
+      label: 'Map',
+      route: 'map'
+    }
+  ];
   constructor() { }
 
   ngOnInit() {

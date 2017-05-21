@@ -12,6 +12,10 @@ import { SuppliersDetailComponent } from './suppliers-detail/suppliers-detail.co
 import {TableModule} from "../components/table/table.module";
 import {SavedSearchesComponent} from "../components/saved-searches/saved-searches.component";
 import {SavedSearchesModule} from "../components/saved-searches/saved-searches.module";
+import {RouterModule} from "@angular/router";
+import {SuppliersDetailModule} from "./suppliers-detail/suppliers-detail.module";
+import { SuppliersAdvancedSearchComponent } from './suppliers-list/suppliers-advanced-search/suppliers-advanced-search.component';
+
 
 @NgModule({
 
@@ -23,8 +27,14 @@ import {SavedSearchesModule} from "../components/saved-searches/saved-searches.m
     PaginationHeaderModule,
     PaginationFooterModule,
     TableModule,
-    SavedSearchesModule
+    SavedSearchesModule,
+    RouterModule,
+    SuppliersDetailModule
   ],
-  declarations: [SuppliersComponent, SuppliersListComponent, SuppliersDetailComponent]
+  declarations: [
+    SuppliersComponent,
+    SuppliersListComponent,
+    SuppliersAdvancedSearchComponent
+  ]
 })
 export class SuppliersModule { }

@@ -2,9 +2,7 @@ $border: 1px solid #D2D8DA;
 $border-radius: 5px;
 
 
-th {
-  padding: 8px;
-}
+
 
 .table-striped > tbody > tr:nth-of-type(odd) {
   background-color: white;
@@ -18,6 +16,7 @@ table{
     th {
       border-top: $border;
       border-bottom: $border;
+      padding: 8px;
       &:first-child {
         border-left: $border;
         border-top-left-radius: $border-radius;

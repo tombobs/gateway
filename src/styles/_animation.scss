@@ -1,12 +1,10 @@
 
-router-outlet {
-  & + * {
-    display: block;
-    overflow: auto;
-    animation-duration: 1200ms;
-    animation-name: fade;
-    animation-fill-mode: forwards;
-  }
+router-outlet + * {
+  display: block;
+  overflow: auto;
+  animation-duration: 1200ms;
+  animation-name: fade;
+  animation-fill-mode: forwards;
 }
 
 @keyframes fade {

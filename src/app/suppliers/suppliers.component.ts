@@ -14,7 +14,7 @@ export class SuppliersComponent implements OnInit {
   constructor(private suppliersService: SuppliersService) { }
 
   columns = [
-    {heading: 'Supplier name', key: 'supplierName'},
+    {heading: 'Supplier name', key: 'name', link: ''},
     {heading: 'Status', key: 'status'},
     {heading: 'Type', key: 'type'},
     {heading: 'Region', key: 'region'},

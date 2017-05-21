@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, ContentChild, ElementRef, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'ig-table',
@@ -9,10 +9,11 @@ export class TableComponent implements OnInit {
 
   @Input() rows;
   @Input() columns;
+  @ContentChild(ElementRef) column: ElementRef;
   constructor() { }
 
   ngOnInit() {
-    console.log(this.columns)
+    console.log(this.column)
   }
 
 }

@@ -1,16 +1,1 @@
-<ig-pagination-header [page]="page" (pageChange)="onPageChange($event)">
-  <div advanced-search>
-    supplier advanced search goes here
-  </div>
-  <div saved-searches>
-    <ig-saved-searches></ig-saved-searches>
-  </div>
-</ig-pagination-header>
-
-<ig-table [columns]="columns" [rows]="suppliers">
-  <td name>
-    <a></a>
-  </td>
-</ig-table>
-
-<ig-pagination-footer [page]="page" (pageChange)="onPageChange($event)"></ig-pagination-footer>
+<router-outlet></router-outlet>

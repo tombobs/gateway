@@ -19,23 +19,9 @@ export class SuppliersDetailComponent implements OnInit {
       route: 'map'
     }
   ];
-  supplierId: number;
-  supplier: any;
-  constructor(
-    private supplierService: SuppliersService,
-    private route: ActivatedRoute
-  ) { }
+  constructor() { }
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
-      const supplierId = +params['id'];
-      this.getSupplier(supplierId);
-    });
-  }
 
-  getSupplier(id) {
-    this.supplierService.getSupplier(id).subscribe(supplier => {
-      this.supplier = supplier;
-    });
   }
 }

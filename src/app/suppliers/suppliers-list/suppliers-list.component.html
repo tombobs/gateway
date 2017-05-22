@@ -16,7 +16,7 @@
     <td *ngFor="let column of columns">
       <span *ngIf="column.key !== 'name'">{{row[column.key]}}</span>
       <span *ngIf="column.key === 'name'">
-        <a [routerLink]="['..', row['supplierId'], 'overview']">{{row[column.key]}}</a>
+        <a [routerLink]="['..', row['id'], 'overview']">{{row[column.key]}}</a>
       </span>
     </td>
   </tr>

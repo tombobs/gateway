@@ -4,7 +4,9 @@
     <form #overviewForm="ngForm" *ngIf="supplier">
       <input [(ngModel)]="supplier.name" id="name" name="name" class="form-control" required>
 
-      <button class="btn btn-primary submit-btn" (click)="updateSupplier()" [disabled]="overviewForm.form.invalid">qwrfrw</button>
+      <button class="btn btn-primary submit-btn" (click)="updateSupplier()" [disabled]="overviewForm.form.invalid">
+        Submit
+      </button>
     </form>
   </div>
 </div>

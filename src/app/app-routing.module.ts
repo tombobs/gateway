@@ -9,6 +9,7 @@ import {SuppliersDetailComponent} from "./suppliers/suppliers-detail/suppliers-d
 import {SuppliersListComponent} from "./suppliers/suppliers-list/suppliers-list.component";
 import {SuppliersDetailOverviewComponent} from "./suppliers/suppliers-detail/suppliers-detail-overview/suppliers-detail-overview.component";
 import {SuppliersDetailMapComponent} from "./suppliers/suppliers-detail/suppliers-detail-map/suppliers-detail-map.component";
+import {SupplierResolve} from "./suppliers/supplier.resolve";
 
 const routes: Routes = [
   {
@@ -40,10 +41,16 @@ const routes: Routes = [
       {
         path: ':id',
         component: SuppliersDetailComponent,
+        // resolve: {
+        //   supplier: SupplierResolve
+        // },
         children: [
           {
             path: 'overview',
-            component: SuppliersDetailOverviewComponent
+            component: SuppliersDetailOverviewComponent,
+            resolve: {
+              supplier: SupplierResolve
+            }
           },
           {
             path: 'map',

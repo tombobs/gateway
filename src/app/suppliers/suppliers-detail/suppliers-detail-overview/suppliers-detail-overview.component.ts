@@ -9,24 +9,20 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class SuppliersDetailOverviewComponent implements OnInit {
 
-  private supplier: any;
+  supplier;
   constructor(
     private supplierService: SuppliersService,
     private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    if (this.supplierService.supplier) {
-      this.supplier = this.supplierService.supplier;
-    }
-    // else {
-    //   this.supplierService.getSupplier()
-    // }
+    this.supplier = this.route.snapshot.data['supplier'].supplier;
   }
 
   updateSupplier() {
-    debugger;
-    return this.supplierService.updateSupplier(this.supplier);
+    return this.supplierService.updateSupplier(this.supplier).subscribe(res => {
+      console.log(res)
+    });
   }
 
 }

@@ -31,7 +31,7 @@ export class SuppliersService  {
   getSupplier(id) {
     const urlParams = new URLSearchParams();
     urlParams['id'] = id;
-    return this.http.get(this.apiUrl, {search: urlParams, withCredentials: true})
+    return this.http.get(this.apiUrl + '/get', {search: urlParams, withCredentials: true})
       .map(res => {
         this.supplier = res.json();
         return this.supplier;

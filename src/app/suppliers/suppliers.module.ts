@@ -15,6 +15,7 @@ import {SavedSearchesModule} from "../components/saved-searches/saved-searches.m
 import {RouterModule} from "@angular/router";
 import {SuppliersDetailModule} from "./suppliers-detail/suppliers-detail.module";
 import { SuppliersAdvancedSearchComponent } from './suppliers-list/suppliers-advanced-search/suppliers-advanced-search.component';
+import {SupplierResolve} from "./supplier.resolve";
 
 
 @NgModule({
@@ -35,6 +36,9 @@ import { SuppliersAdvancedSearchComponent } from './suppliers-list/suppliers-adv
     SuppliersComponent,
     SuppliersListComponent,
     SuppliersAdvancedSearchComponent
+  ],
+  providers: [
+    SupplierResolve
   ]
 })
 export class SuppliersModule { }

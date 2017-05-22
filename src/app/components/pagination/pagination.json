@@ -1,0 +1,8 @@
+{
+  "defaults": {
+    "pageSize": 5,
+    "pageNumber": 1,
+    "totalResults": 0,
+    "pageSizes": [5,10,20]
+  }
+}

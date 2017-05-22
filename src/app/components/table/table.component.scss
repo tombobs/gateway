@@ -1,0 +1,44 @@
+$border: 1px solid #D2D8DA;
+$border-radius: 5px;
+
+
+
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: white;
+}
+
+table{
+  border-collapse: separate;
+  border-radius: $border-radius;
+  thead {
+    border-width: 2px;
+    th {
+      border-top: $border;
+      border-bottom: $border;
+      padding: 8px;
+      &:first-child {
+        border-left: $border;
+        border-top-left-radius: $border-radius;
+      }
+      &:last-child {
+        border-right: $border;
+        border-top-right-radius: $border-radius;
+      }
+    }
+  }
+  tbody {
+    tr:last-child {
+      td:first-child {
+        border-bottom-left-radius: $border-radius;
+      }
+      td:last-child {
+        border-bottom-right-radius: $border-radius;
+      }
+    }
+  }
+}
+
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 5px;
+}

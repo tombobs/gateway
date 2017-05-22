@@ -1,0 +1,20 @@
+@import "variables";
+
+@import '../../node_modules/font-awesome/scss/font-awesome';
+@import "../../node_modules/bootstrap/dist/css/bootstrap.css";
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: $body-bg;
+}
+
+
+@import "forms";
+@import "overrides";
+@import "animation";
+@import "utilites";
+

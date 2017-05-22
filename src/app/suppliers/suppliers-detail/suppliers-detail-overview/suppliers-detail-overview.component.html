@@ -1,0 +1,10 @@
+<div class="row-fluid">
+  <div class="col-sm-2"><label for="name">Name:</label></div>
+  <div class="col-sm-6">
+    <form #overviewForm="ngForm" *ngIf="supplier">
+      <input [(ngModel)]="supplier.name" id="name" name="name" class="form-control" required>
+
+      <button class="btn btn-primary submit-btn" (click)="updateSupplier()" [disabled]="overviewForm.form.invalid">qwrfrw</button>
+    </form>
+  </div>
+</div>

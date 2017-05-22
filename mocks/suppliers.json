@@ -1,0 +1,109 @@
+{
+  "data": [
+    {
+      "supplierId": 1,
+      "name": "supplier 1",
+      "status": "Inactive",
+      "type": "Repairer",
+      "region": "r1",
+      "phoneNumber": "01234 545983",
+      "primaryUser": "Tom Roberts"
+    },
+    {
+      "supplierId": 2,
+      "name": "supplier 2",
+      "status": "Inactive",
+      "type": "Repairer",
+      "region": "r1",
+      "phoneNumber": "01234 545983",
+      "primaryUser": "Tom Roberts"
+    },
+    {
+      "supplierId": 1,
+      "name": "supplier 3",
+      "status": "Inactive",
+      "type": "Repairer",
+      "region": "r1",
+      "phoneNumber": "01234 545983",
+      "primaryUser": "Tom Roberts"
+    },
+    {
+      "supplierId": 1,
+      "name": "supplier 4",
+      "status": "Inactive",
+      "type": "Repairer",
+      "region": "r1",
+      "phoneNumber": "01234 545983",
+      "primaryUser": "Tom Roberts"
+    },
+    {
+      "supplierId": 1,
+      "name": "supplier 5",
+      "status": "Inactive",
+      "type": "Repairer",
+      "region": "r1",
+      "phoneNumber": "01234 545983",
+      "primaryUser": "Tom Roberts"
+    },
+    {
+      "supplierId": 1,
+      "name": "supplier 6",
+      "status": "Inactive",
+      "type": "Repairer",
+      "region": "r1",
+      "phoneNumber": "01234 545983",
+      "primaryUser": "Tom Roberts"
+    },
+    {
+      "supplierId": 1,
+      "name": "supplier 7",
+      "status": "Inactive",
+      "type": "Repairer",
+      "region": "r1",
+      "phoneNumber": "01234 545983",
+      "primaryUser": "Tom Roberts"
+    },
+    {
+      "supplierId": 1,
+      "name": "supplier 8",
+      "status": "Inactive",
+      "type": "Repairer",
+      "region": "r1",
+      "phoneNumber": "01234 545983",
+      "primaryUser": "Tom Roberts"
+    },
+    {
+      "supplierId": 1,
+      "name": "supplier 9",
+      "status": "Inactive",
+      "type": "Repairer",
+      "region": "r1",
+      "phoneNumber": "01234 545983",
+      "primaryUser": "Tom Roberts"
+    },
+    {
+      "supplierId": 1,
+      "name": "supplier 10",
+      "status": "Inactive",
+      "type": "Repairer",
+      "region": "r1",
+      "phoneNumber": "01234 545983",
+      "primaryUser": "Tom Roberts"
+    },
+    {
+      "supplierId": 1,
+      "name": "supplier 11",
+      "status": "Inactive",
+      "type": "Repairer",
+      "region": "r1"
+    },
+    {
+      "supplierId": 1,
+      "name": "supplier 12",
+      "status": "Inactive",
+      "type": "Repairer",
+      "region": "r1"
+    }
+  ],
+  "totalResults": 12
+}

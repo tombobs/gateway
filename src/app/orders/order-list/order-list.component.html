@@ -1,0 +1,29 @@
+<div>
+  <table class="table table-striped table-hover table-condensed ">
+
+    <tbody>
+    <tr *ngFor="let row of rows">
+      <td>{{row.orderDate | date}}</td>
+      <td>
+        <a [routerLink]="row.orderItemId"> {{row.orderItemId}}</a>
+      </td>
+      <td>{{row.customerName}}</td>
+      <td>{{row.supplierName}}</td>
+      <td>{{row.type}}</td>
+      <td>{{row.status}}</td>
+      <td>
+        <span [popover]="myPopover" [popoverOnHover]="true">
+          <i class="fa fa-info-circle"></i>
+        </span>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<popover-content #myPopover
+                 placement="left"
+                 [animation]="true">
+
+                 lol
+</popover-content>

@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-sm-12">
+    <span>
+        Adjust your results using the filters below
+    </span>
+    <a class="pull-right">Save this search</a>
+  </div>
+</div>
+
+<hr>
+
+<form #searchForm="ngForm">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="col-sm-12 no-padding">Order date</div>
+      <div class="col-sm-6 no-padding">
+        <my-date-picker placeholder="from" name="fromDate"
+                        [options]="myDatePickerOptions" [(ngModel)]="fromDate"></my-date-picker>
+      </div>
+      <div class="col-sm-6 no-padding">
+        <my-date-picker placeholder="to" name="toDate"
+                        [options]="myDatePickerOptions" [(ngModel)]="toDate"></my-date-picker>
+      </div>
+
+      <div class="col-sm-12 no-padding">Supplier</div>
+      <input [(ngModel)]="supplierName" name="supplierName" class="form-control">
+      <!--<ng2-completer dataField="results" name="supplierId" [(ngModel)]="searchStr" [datasource]="dataService" [minSearchLength]="0"></ng2-completer>-->
+      <!--<ng-select [options]="suppliers" [(ngModel)]="supplierId" name="supplierId"></ng-select>-->
+    </div>
+
+    <div class="col-sm-6">
+      Order item ID
+
+      <input type="text" class="form-control" [(ngModel)]="orderItemId" name="orderItemId"/>
+
+      <button [disabled]="searchForm.form.invalid" class="btn btn-primary submit-btn pull-right" (click)="onSubmit()">Submit</button>
+
+    </div>
+
+  </div>
+</form>

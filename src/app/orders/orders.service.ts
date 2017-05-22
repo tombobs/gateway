@@ -6,6 +6,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 import { APP_CONFIG } from '../app.config';
+import {Router} from "@angular/router";
 
 
 
@@ -15,7 +16,8 @@ export class OrdersService {
   private apiUrl;
   constructor(
     @Inject(APP_CONFIG) private config,
-    private http: Http
+    private http: Http,
+    private router: Router
   ) {
     this.apiUrl = config.apiUrl + 'orderitem/';
   }
@@ -23,6 +25,12 @@ export class OrdersService {
   getOrders(filter): Observable<any> {
     return this.http.get(this.apiUrl + 'list', {search: filter, withCredentials: true})
       .map(res => res.json())
-      .catch(err => Observable.throw(err));
+      .catch(err => {
+        if (err.status === 401) {
+          this.router.navigate(['login']);
+        }
+        debugger
+        return Observable.throw(err);
+      });
   }
 }

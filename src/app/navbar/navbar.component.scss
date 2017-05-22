@@ -13,11 +13,12 @@ $logo-top-margin: 25px;
   height: $navbar-height;
 }
 
-.nav-links {
+.nav-links, .logout {
   position: relative;
   top: 27px;
   a {
     color: #c7c7c7;
+    cursor: pointer;
     margin-right: 20px;
     &:hover,:focus {
       color: white;
@@ -33,6 +34,15 @@ $logo-top-margin: 25px;
       position: relative;
       top: 1px;
     }
+  }
+}
+
+.logout {
+  position: relative;
+  top: 27px;
+
+  .fa {
+    margin-left: 5px;
   }
 }
 

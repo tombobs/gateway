@@ -10,7 +10,7 @@ export class OrderListComponent {
 
   columns = [
     {heading: 'Order date', key: 'dateCreated', custom: true},
-    {heading: 'Order ID', key: 'orderId', custom: true},
+    {heading: 'Order ID', key: 'referenceId', custom: true},
     {heading: 'Customer name', key: 'customerName'},
     {heading: 'Supplier', key: 'supplierName'},
     {heading: 'Type', key: 'typeText'},

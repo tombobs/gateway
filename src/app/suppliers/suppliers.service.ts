@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import {Observable} from "rxjs/Observable";
 import {APP_CONFIG, IAppConfig} from "../app.config";
+import {Router} from "@angular/router";
 
 @Injectable()
 export class SuppliersService  {
@@ -13,6 +14,7 @@ export class SuppliersService  {
   private apiUrl;
   constructor(
     private http: Http,
+    private router: Router,
     @Inject(APP_CONFIG) private config: IAppConfig
   ) {
     this.apiUrl = config.apiUrl + 'supplier';
@@ -25,7 +27,12 @@ export class SuppliersService  {
     }
     return this.http.get(this.apiUrl + '/list', {search: urlParams, withCredentials: true})
       .map(res => res.json())
-      .catch(err => Observable.throw(err));
+      .catch(err => {
+        if (err.status === 401) {
+          this.router.navigate(['login']);
+        }
+        return Observable.throw(err);
+      });
   }
 
   getSupplier(id) {
@@ -36,7 +43,10 @@ export class SuppliersService  {
         this.supplier = res.json();
         return this.supplier;
       })
-      .catch(err => Observable.throw(err));
+      .catch(err => {
+
+        return Observable.throw(err);
+      });
   }
 
   updateSupplier(supplier) {

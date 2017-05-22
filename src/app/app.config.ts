@@ -9,5 +9,5 @@ export interface IAppConfig {
 }
 
 export const AppConfig: IAppConfig = {
-  apiUrl: useMocks ? 'http://localhost:8080/' : 'http://ukwy13434:82/'
+  apiUrl: useMocks ? 'http://localhost:8080/' : 'http://10.2.108.20:82/'
 }

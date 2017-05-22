@@ -9,7 +9,7 @@
       <span *ngIf="column.key === 'dateCreated'">
         {{row[column.key] | date}}
       </span>
-      <span *ngIf="column.key === 'orderId'">
+      <span *ngIf="column.key === 'referenceId'">
         <a [routerLink]="[row['id'], 'overview']">{{row[column.key]}}</a>
       </span>
       <span  *ngIf="column.key === 'statusText'" >

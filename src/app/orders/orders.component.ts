@@ -43,6 +43,6 @@ export class OrdersComponent implements OnInit {
     this.orderService.getOrders(orderSearch).subscribe(data => {
       this.orders = data.results;
       this.page.totalResults = data.totalResults;
-    }, err => alert(err));
+    }, err => console.log(err));
   }
 }

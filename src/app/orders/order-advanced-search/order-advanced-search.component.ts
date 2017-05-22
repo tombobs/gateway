@@ -23,7 +23,7 @@ export class OrderAdvancedSearchComponent implements OnInit {
   private toDate;
   private suppliers: any;
   private supplierId: number;
-  private orderItemId: string;
+  private orderId: string;
   private supplierName: string;
 
   @Output() submit: EventEmitter<any> = new EventEmitter();
@@ -58,7 +58,7 @@ export class OrderAdvancedSearchComponent implements OnInit {
       fromDate: this.fromDate && this.fromDate.jsdate.toISOString(),
       toDate: this.toDate && this.toDate.jsdate.toISOString(),
       supplierId: this.supplierId,
-      orderItemId: this.orderItemId
+      orderItemId: this.orderId
     };
     this.submit.emit(search);
     this.close();

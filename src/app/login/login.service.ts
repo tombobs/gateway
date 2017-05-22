@@ -16,14 +16,16 @@ export class LoginService {
     private http: Http,
     @Inject(APP_CONFIG) private config: IAppConfig
   ) {
-    this.apiUrl = config.apiUrl + 'logon';
+    this.apiUrl = config.apiUrl;
   }
 
   login(user: string, password: string) {
-    return this.http.post(this.apiUrl, {user, password}, {withCredentials: true})
-       .map(res => {
-         return res.json()
-       })
+    return this.http.post(this.apiUrl + 'logon', {user, password}, {withCredentials: true})
+       .map(res => res)
        .catch(err => Observable.throw(err));
+  }
+
+  logout() {
+    return this.http.post(this.apiUrl + 'logoff', {}, {withCredentials: true});
   }
 }

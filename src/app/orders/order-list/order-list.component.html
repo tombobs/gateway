@@ -1,29 +1,26 @@
-<div>
-  <table class="table table-striped table-hover table-condensed ">
+<table class="table table-bordered table-striped table-responsive table-condensed">
+  <thead>
+  <th *ngFor="let column of columns">{{column.heading}}</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let row of rows">
+    <td *ngFor="let column of columns">
+      <span *ngIf="!column.custom">{{row[column.key]}}</span>
+      <span *ngIf="column.key === 'dateCreated'">
+        {{row[column.key] | date}}
+      </span>
+      <span *ngIf="column.key === 'orderId'">
+        <a [routerLink]="[row['id'], 'overview']">{{row[column.key]}}</a>
+      </span>
+      <span  *ngIf="column.key === 'statusText'" >
+        {{row['statusText']}}
+        <i [popover]="myPopover" [popoverOnHover]="true" class="fa fa-info-circle pull-right"></i>
+      </span>
+    </td>
+  </tr>
+  </tbody>
+</table>
 
-    <tbody>
-    <tr *ngFor="let row of rows">
-      <td>{{row.orderDate | date}}</td>
-      <td>
-        <a [routerLink]="row.orderItemId"> {{row.orderItemId}}</a>
-      </td>
-      <td>{{row.customerName}}</td>
-      <td>{{row.supplierName}}</td>
-      <td>{{row.type}}</td>
-      <td>{{row.status}}</td>
-      <td>
-        <span [popover]="myPopover" [popoverOnHover]="true">
-          <i class="fa fa-info-circle"></i>
-        </span>
-      </td>
-    </tr>
-    </tbody>
-  </table>
-</div>
-
-<popover-content #myPopover
-                 placement="left"
-                 [animation]="true">
-
-                 lol
+<popover-content #myPopover placement="left" [animation]="true">
+  more order info
 </popover-content>

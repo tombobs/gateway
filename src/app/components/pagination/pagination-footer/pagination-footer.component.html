@@ -4,12 +4,12 @@
   </div>
 
   <div class="col-sm-2">
-    <div class="col-sm-6">
+    <div class="col-sm-4">
       <span class="pull-right">
         View
       </span>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-8">
       <select [(ngModel)]="page.pageSize" (change)="onPageChange()" class="form-control">
         <option *ngFor="let size of page.pageSizes" [value]="size">{{size}}</option>
       </select>

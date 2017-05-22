@@ -41,9 +41,9 @@ const routes: Routes = [
       {
         path: ':id',
         component: SuppliersDetailComponent,
-        // resolve: {
-        //   supplier: SupplierResolve
-        // },
+        resolve: {
+          supplier: SupplierResolve
+        },
         children: [
           {
             path: 'overview',
@@ -54,7 +54,10 @@ const routes: Routes = [
           },
           {
             path: 'map',
-            component: SuppliersDetailMapComponent
+            component: SuppliersDetailMapComponent,
+            resolve: {
+              supplier: SupplierResolve
+            }
           }
         ]
       }

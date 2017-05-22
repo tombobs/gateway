@@ -2,12 +2,18 @@ import {Component, Input, OnChanges} from '@angular/core';
 
 @Component({
   selector: 'ig-order-list',
-  templateUrl: './order-list.component.html'
+  templateUrl: './order-list.component.html',
+  styleUrls: ['./order-list.component.scss']
 })
-export class OrderListComponent implements OnChanges {
+export class OrderListComponent {
   @Input() rows;
 
-  ngOnChanges(changes) {
-    setTimeout(() => window.dispatchEvent(new Event('resize')));
-  }
+  columns = [
+    {heading: 'Order date', key: 'dateCreated', custom: true},
+    {heading: 'Order ID', key: 'orderId', custom: true},
+    {heading: 'Customer name', key: 'customerName'},
+    {heading: 'Supplier', key: 'supplierName'},
+    {heading: 'Type', key: 'typeText'},
+    {heading: 'Status', key: 'statusText', custom: true}
+  ];
 }

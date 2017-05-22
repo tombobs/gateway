@@ -21,7 +21,7 @@ export class OrdersService {
   }
 
   getOrders(filter): Observable<any> {
-    return this.http.get(this.apiUrl + 'list', {search: filter} as RequestOptionsArgs)
+    return this.http.get(this.apiUrl + 'list', {search: filter, withCredentials: true})
       .map(res => res.json())
       .catch(err => Observable.throw(err));
   }

@@ -31,8 +31,9 @@ export class OrdersComponent implements OnInit {
   }
 
   onSearchChange(search) {
+    if (search.isTrusted) return; // temp workaround for demo.. TODO: work out why this gets called twice
     this.advancedSearch = search;
-    debugger;
+
     this.visible = false;
     this.load();
   }

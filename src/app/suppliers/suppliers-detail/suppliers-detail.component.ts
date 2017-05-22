@@ -9,6 +9,7 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class SuppliersDetailComponent implements OnInit {
 
+  supplier;
   sections = [
     {
       label: 'Overview',
@@ -19,9 +20,10 @@ export class SuppliersDetailComponent implements OnInit {
       route: 'map'
     }
   ];
-  constructor() { }
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-
+    this.supplier = this.route.snapshot.data['supplier'].supplier;
   }
 }

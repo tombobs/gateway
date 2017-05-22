@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'ig-suppliers-detail-map',
@@ -7,12 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SuppliersDetailMapComponent implements OnInit {
 
+  supplier;
   title: string = 'My first angular2-google-maps project';
   lat: number = 51.678418;
   lng: number = 7.809007;
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit() {
+    this.supplier = this.route.snapshot.data['supplier'].supplier;
   }
 
 }

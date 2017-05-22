@@ -8,6 +8,6 @@ export class SupplierResolve implements Resolve<any> {
   constructor(private suppliersService: SuppliersService) {}
 
   resolve(route: ActivatedRouteSnapshot) {
-    return this.suppliersService.getSupplier(+route.parent.paramMap.get('id'));
+    return this.suppliersService.getSupplier(+route.parent.paramMap.get('id') || +route.paramMap.get('id'));
   }
 }

@@ -1,0 +1,18 @@
+<table class="table table-bordered table-striped table-responsive table-condensed">
+  <thead>
+  <th *ngFor="let column of columns">{{column.heading}}</th>
+  </thead>
+  <!--<tbody>-->
+  <ng-content select="tbody"></ng-content>
+  <!--<tr *ngFor="let row of rows">-->
+    <!--<td *ngFor="let column of columns">-->
+      <!--<span *ngIf="!column.custom">-->
+        <!--{{row[column.key]}}-->
+      <!--</span>-->
+      <!--<span *ngIf="column.custom">-->
+        <!--<ng-content [attr.select]="column.key"></ng-content>-->
+      <!--</span>-->
+    <!--</td>-->
+  <!--</tr>-->
+  <!--</tbody>-->
+</table>

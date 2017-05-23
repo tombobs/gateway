@@ -1,0 +1,25 @@
+<div class="row-fluid">
+  <div class="col-sm-2 border-right">
+    {{page.totalResults}} found
+  </div>
+
+  <div class="col-sm-2">
+    <div class="col-sm-4">
+      <span class="pull-right">
+        View
+      </span>
+    </div>
+    <div class="col-sm-8">
+      <select [(ngModel)]="page.pageSize" (change)="onPageChange()" class="form-control">
+        <option *ngFor="let size of page.pageSizes" [value]="size">{{size}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="pull-right">
+    <ig-pager [totalItems]="page.totalResults"
+                   [itemsPerPage]="page.pageSize"
+                   (pageChanged)="onPageChange($event)">
+    </ig-pager>
+  </div>
+</div>

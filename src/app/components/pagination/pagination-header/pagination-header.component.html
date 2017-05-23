@@ -1,0 +1,55 @@
+<div class="row-fluid">
+
+  <div class="col-sm-2 border-right">
+    {{page.totalResults}} found
+  </div>
+
+  <div class="col-sm-2">
+    <div class="col-sm-4">
+      <span class="pull-right">View</span>
+    </div>
+    <div class="col-sm-8">
+      <select [(ngModel)]="page.pageSize" class="form-control input-sm" (change)="onPageChange()">
+        <option *ngFor="let size of page.pageSizes" [value]="size">{{size}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="col-sm-offset-4 col-sm-2">
+    <button class="btn btn-default btn-sm btn-block saved-searches-btn"
+            [popover]="savedSearchPopover"
+            (onShown)="savedSearchesVisible = true"
+            (onHidden)="savedSearchesVisible = false">
+      Saved searches
+      <span class="open-close-btn">
+        <i [class.open]="savedSearchesVisible" class="fa fa-chevron-right icon"></i>
+      </span>
+    </button>
+    <popover-content #savedSearchPopover
+                     placement="bottom"
+                     [animation]="true"
+                     [closeOnClickOutside]="true">
+      <ng-content select="[saved-searches]"></ng-content>
+    </popover-content>
+  </div>
+
+
+  <div class="col-sm-2">
+    <button class="btn btn-default btn-sm btn-block advanced-search-btn"
+            [popover]="myPopover"
+            (onShown)="advancedSearchVisible = true"
+            (onHidden)="advancedSearchVisible = false">
+      Refine search
+      <span class="open-close-btn">
+        <i [class.open]="advancedSearchVisible" class="fa fa-chevron-right icon"></i>
+      </span>
+    </button>
+
+    <popover-content #myPopover
+                     placement="bottom"
+                     [animation]="true"
+                     [closeOnClickOutside]="true">
+      <ng-content select="[advanced-search]"></ng-content>
+    </popover-content>
+  </div>
+</div>

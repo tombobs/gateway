@@ -1,0 +1,46 @@
+@import "_variables";
+
+a {
+  color: darken($primary-color, 10%);
+
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+.popover {
+  max-width: 600px;
+}
+
+h1, .h1, h2, .h2, h3, .h3 {
+  margin-top: 10px !important;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: darken($primary-color, 10%);
+  border-color: darken($primary-color, 20%);
+
+  &:hover {
+    background-color: darken($primary-color, 20%);
+    border-color: darken($primary-color, 30%);
+  }
+}
+
+.nav-pills > li.active > a {
+  background-color: darken($primary-color, 10%);
+  border-color: darken($primary-color, 20%);
+
+  &:active, &:focus {
+    background-color: darken($primary-color, 10%);
+    border-color: darken($primary-color, 20%);
+  }
+}
+
+.form-control:focus, .form-control:active,
+button:focus, button:active {
+  outline: none !important;
+  border-color: rgb(204, 204, 204);
+  -webkit-box-shadow: none;
+  box-shadow: none !important;
+}

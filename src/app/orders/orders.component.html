@@ -1,0 +1,12 @@
+<ig-pagination-header [page]="page" (pageChange)="onPageChange($event)">
+  <div saved-searches>
+    <ig-saved-searches></ig-saved-searches>
+  </div>
+  <div advanced-search>
+    <ig-order-advanced-search (submit)="onSearchChange($event)"></ig-order-advanced-search>
+  </div>
+</ig-pagination-header>
+
+<ig-order-list *ngIf="orders" [rows]="orders"></ig-order-list>
+
+<ig-pagination-footer [page]="page" (pageChange)="onPageChange($event)"></ig-pagination-footer>
